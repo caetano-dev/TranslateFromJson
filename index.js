@@ -30,15 +30,17 @@ function translate(phraseIndex) {
           });
 
           const json = JSON.stringify(file);
-          fs.writeFile("./sentences.json", json, "utf8", (err) => {
-            console.log(err);
+          fs.writeFile("./sentences.json", json, "utf8", (error) => {
+            if (error) () => console.log(error);
           });
         }
       });
     })
-    .catch(function (err) {
+    .catch((err) => {
       console.error(err);
-      console.log("Limit reached. Trying again in 10 seconds.");
+      console.log(
+        "Limit reached. Trying again in 10 seconds. Don't worry if the next message looks like and error"
+      );
     });
 }
 
