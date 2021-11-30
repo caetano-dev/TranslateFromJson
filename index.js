@@ -26,7 +26,7 @@ function translate(phraseIndex) {
           const file = JSON.parse(data);
           file.phrases.push({
             english: englishPhrases[phraseIndex],
-            german: response.data.translation_text,
+            targetLanguage: response.data.translation_text,
           });
 
           const json = JSON.stringify(file);
